@@ -3,7 +3,7 @@
 <b>QI Elements:</b>
 <ul>
 <li>modifierExtension(:doNotPerform): (QI) Extension</li>
-<li>modifierExtension.value[x](DeviceRequest.modifierExtension:doNotPerform.value[x]): (QI) Value of extension</li>
+<li>modifierExtension.value[x]: (QI) Value of extension</li>
 <li>identifier: (QI) External Request identifier</li>
 <li>status: (QI) draft | active | on-hold | revoked | completed | entered-in-error | unknown</li>
 <li>intent: (QI) proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option</li>

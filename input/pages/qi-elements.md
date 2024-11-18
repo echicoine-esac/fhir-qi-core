@@ -266,13 +266,13 @@
 
 ### [QICore Coverage](StructureDefinition-qicore-coverage.html) ###
 **Must Have:**
-* identifier.type(Coverage.identifier:memberid.type): Member Number identifier type
+* identifier.type: Member Number identifier type
 * status: active \| cancelled \| draft \| entered-in-error
 * beneficiary: (QI) Plan beneficiary
 * relationship: Beneficiary relationship to the subscriber
 * payor: (QI) Issuer of the policy
-* class.value(Coverage.class:group.value): Group Number
-* class.value(Coverage.class:plan.value): Plan Number
+* class.value: Group Number
+* class.value: Plan Number
 
 
 **QI Elements:**
@@ -294,7 +294,7 @@
 ### [QICore Device Not Requested](StructureDefinition-qicore-devicenotrequested.html) ###
 **QI Elements:**
 * modifierExtension(:doNotPerform): (QI) Extension
-* modifierExtension.value[x](DeviceRequest.modifierExtension:doNotPerform.value[x]): (QI) Value of extension
+* modifierExtension.value[x]: (QI) Value of extension
 * status: (QI) draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
 * intent: (QI) proposal \| plan \| directive \| order \| original-order \| reflex-order \| filler-order \| instance-order \| option
 * code[x]: (QI) Device requested
@@ -330,7 +330,7 @@
 ### [QICore DeviceRequest](StructureDefinition-qicore-devicerequest.html) ###
 **QI Elements:**
 * modifierExtension(:doNotPerform): (QI) Extension
-* modifierExtension.value[x](DeviceRequest.modifierExtension:doNotPerform.value[x]): (QI) Value of extension
+* modifierExtension.value[x]: (QI) Value of extension
 * identifier: (QI) External Request identifier
 * status: (QI) draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
 * intent: (QI) proposal \| plan \| directive \| order \| original-order \| reflex-order \| filler-order \| instance-order \| option
@@ -991,11 +991,11 @@
 
 **QI Elements:**
 * identifier(:ccn): (QI) CMS Certification Number
-* identifier.use(Organization.identifier:ccn.use): (QI) usual \| official \| temp \| secondary \| old (If known)
-* identifier.value(Organization.identifier:ccn.value): (QI) The value that is unique
+* identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
+* identifier.value: (QI) The value that is unique
 * identifier(:ein): (QI) Employer Identification Number
-* identifier.use(Organization.identifier:ein.use): (QI) usual \| official \| temp \| secondary \| old (If known)
-* identifier.value(Organization.identifier:ein.value): (QI) The value that is unique
+* identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
+* identifier.value: (QI) The value that is unique
 
 **Primary code path:** type
 <br>
@@ -1053,8 +1053,8 @@
 **QI Elements:**
 * identifier(:NPI): (QI) An identifier for the person as this agent
 * identifier(:ein): (QI) There is not a general Tax Identifier Numer (TIN) OID. There is an SSN, a PTIN, and an ITIN, but no TIN generally. So the only slice specified here is EIN, if consumers determine a need for an SSN, submit a comment to that effect.
-* identifier.use(Practitioner.identifier:ein.use): (QI) usual \| official \| temp \| secondary \| old (If known)
-* identifier.value(Practitioner.identifier:ein.value): (QI) The value that is unique
+* identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
+* identifier.value: (QI) The value that is unique
 
 
 
