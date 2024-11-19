@@ -71,7 +71,7 @@
 * status: draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
 * intent: proposal \| plan \| order \| option
 * category: (QI) Type of plan
-* category(:AssessPlan): (QI) Type of plan
+* AssessPlan: (QI) Type of plan
 * subject: (QI) Who the care plan is for.
 
 **Primary code path:** category
@@ -218,7 +218,7 @@
 ### [QICore Condition Encounter Diagnosis](StructureDefinition-qicore-condition-encounter-diagnosis.html) ###
 **Must Have:**
 * category: category codes
-* category(:us-core): encounter-diagnosis
+* us-core: encounter-diagnosis
 * code: Identification of the condition, problem or diagnosis
 * subject: (QI) Who has the condition?
 
@@ -241,7 +241,7 @@
 ### [QICore Condition Problems Health Concerns](StructureDefinition-qicore-condition-problems-health-concerns.html) ###
 **Must Have:**
 * category: category codes
-* category(:us-core): problem-list-item \| health-concern
+* us-core: problem-list-item \| health-concern
 * code: (QI) Identification of the condition, problem or diagnosis
 * subject: (QI) Who has the condition?
 
@@ -293,7 +293,7 @@
 
 ### [QICore Device Not Requested](StructureDefinition-qicore-devicenotrequested.html) ###
 **QI Elements:**
-* modifierExtension(:doNotPerform): (QI) Extension
+* doNotPerform: (QI) Extension
 * modifierExtension.value[x]: (QI) Value of extension
 * status: (QI) draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
 * intent: (QI) proposal \| plan \| directive \| order \| original-order \| reflex-order \| filler-order \| instance-order \| option
@@ -329,7 +329,7 @@
 
 ### [QICore DeviceRequest](StructureDefinition-qicore-devicerequest.html) ###
 **QI Elements:**
-* modifierExtension(:doNotPerform): (QI) Extension
+* doNotPerform: (QI) Extension
 * modifierExtension.value[x]: (QI) Value of extension
 * identifier: (QI) External Request identifier
 * status: (QI) draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
@@ -371,7 +371,7 @@
 **Must Have:**
 * status: (QI)registered \| partial \| preliminary \| final +
 * category: (QI) Service category
-* category(:LaboratorySlice): (QI) Service category
+* LaboratorySlice: (QI) Service category
 * code: (QI) US Core Laboratory Report Order Code
 * subject: (QI) The subject of the report - usually, but not always, the patient
 
@@ -616,7 +616,7 @@
 **Must Have:**
 * status: (QI) registered \| prliminary \| final \| amended \| corrected \| entered-in-error \| unknown
 * category: (QI) Classification of type of observation
-* category(:us-core): (QI) Classification of type of observation
+* us-core: (QI) Classification of type of observation
 * code: (QI) Laboratory Test Name
 * subject: (QI) Who and/or what the observation is about
 
@@ -883,7 +883,7 @@
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * performer: (QI) Who is responsible for the observation
 * value[x]: (QI) Actual result
-* value[x](:valueCodeableConcept): (QI) actual \| potential
+* valueCodeableConcept: (QI) actual \| potential
 * interpretation: (QI) High, low, normal, etc.
 * derivedFrom: (QI) QI Core Profiles or other resource the observation is made from
 
@@ -917,7 +917,7 @@
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * issued: (QI) Date/Time this version was made available
 * value[x]: (QI) Actual result
-* value[x](:valueCodeableConcept): (QI) Actual result
+* valueCodeableConcept: (QI) Actual result
 * interpretation: (QI) High, low, normal, etc.
 
 **Primary code path:** code
@@ -939,7 +939,7 @@
 
 
 **QI Elements:**
-* category(:us-core): (QI) Classification of type of observation
+* us-core: (QI) Classification of type of observation
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * value[x]: (QI) Result Value
 * dataAbsentReason: (QI) Why the result is missing
@@ -958,13 +958,13 @@
 **Must Have:**
 * status: (QI) registered \| prliminary \| final \| amended \| corrected \| entered-in-error \| unknown
 * category: (QI) Classification of type of observation
-* category(:survey): (QI) Classification of type of observation
+* survey: (QI) Classification of type of observation
 * code: (QI) Type of observation (code / type)
 * subject: (QI) Who and/or what the observation is about
 
 
 **QI Elements:**
-* category(:screening-assessment): (QI) Classification of type of observation
+* screening-assessment: (QI) Classification of type of observation
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * performer: (QI) Who is responsible for the observation
 * value[x]: (QI) Actual result
@@ -990,10 +990,10 @@
 
 
 **QI Elements:**
-* identifier(:ccn): (QI) CMS Certification Number
+* ccn: (QI) CMS Certification Number
 * identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
 * identifier.value: (QI) The value that is unique
-* identifier(:ein): (QI) Employer Identification Number
+* ein: (QI) Employer Identification Number
 * identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
 * identifier.value: (QI) The value that is unique
 
@@ -1051,8 +1051,8 @@
 
 
 **QI Elements:**
-* identifier(:NPI): (QI) An identifier for the person as this agent
-* identifier(:ein): (QI) There is not a general Tax Identifier Numer (TIN) OID. There is an SSN, a PTIN, and an ITIN, but no TIN generally. So the only slice specified here is EIN, if consumers determine a need for an SSN, submit a comment to that effect.
+* NPI: (QI) An identifier for the person as this agent
+* ein: (QI) There is not a general Tax Identifier Numer (TIN) OID. There is an SSN, a PTIN, and an ITIN, but no TIN generally. So the only slice specified here is EIN, if consumers determine a need for an SSN, submit a comment to that effect.
 * identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
 * identifier.value: (QI) The value that is unique
 
@@ -1246,7 +1246,7 @@
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * performer: (QI) Who is responsible for the observation
 * value[x]: (QI) Actual result
-* value[x](:valueCodeableConcept): (QI) actual \| potential
+* valueCodeableConcept: (QI) actual \| potential
 * interpretation: (QI) High, low, normal, etc.
 * derivedFrom: (QI) US Core Profiles or other resource the observation is made from
 
