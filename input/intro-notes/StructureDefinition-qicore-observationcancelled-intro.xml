@@ -2,16 +2,16 @@
 <!--Begin Generated Intro Tag (DO NOT REMOVE)-->
 <b>QI Elements:</b>
 <ul>
-<li>Observation.extension(event-statusReason): (QI) Event Status Reason</li>
+<li>extension(event-statusReason): (QI) Event Status Reason</li>
 <li>status: (QI) registered | preliminary | final | amended +</li>
 <li>category: (QI) Classification of type of observation</li>
 <li>code: (QI) Type of observation (code / type)</li>
-<li>Observation.code.extension(notDoneValueSet): (QI) What was not done</li>
+<li>code.extension(notDoneValueSet): (QI) What was not done</li>
 <li>subject: (QI) Who and/or what the observation is about</li>
 <li>effective[x]: (QI) Clinically relevant time/time-period for observation</li>
 <li>issued: (QI) Date/Time this version was made available</li>
 <li>value[x]: (QI) Actual result</li>
-<li>Observation.value[x](valueCodeableConcept): (QI) Actual result</li>
+<li>value[x](valueCodeableConcept): (QI) Actual result</li>
 <li>interpretation: (QI) High, low, normal, etc.</li>
 </ul>
 

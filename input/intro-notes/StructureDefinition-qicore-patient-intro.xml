@@ -14,11 +14,11 @@
 
 <b>QI Elements:</b>
 <ul>
-<li>Patient.extension(race): (QI) US Core Race Extension</li>
-<li>Patient.extension(ethnicity): (QI) US Core ethnicity Extension</li>
-<li>Patient.extension(tribalAffiliation): (QI) Tribal Affiliation Extension</li>
-<li>Patient.extension(sex): (QI) Sex Extension</li>
-<li>Patient.extension(genderIdentity): (QI) The individual's gender identity</li>
+<li>extension(race): (QI) US Core Race Extension</li>
+<li>extension(ethnicity): (QI) US Core ethnicity Extension</li>
+<li>extension(tribalAffiliation): (QI) Tribal Affiliation Extension</li>
+<li>extension(sex): (QI) Sex Extension</li>
+<li>extension(genderIdentity): (QI) The individual's gender identity</li>
 <li>name.use: (QI) usual | official | temp | nickname | anonymous | old | maiden</li>
 <li>name.suffix: (QI) Parts that come after the name</li>
 <li>name.period: (QI) Time period when name was/is in use</li>

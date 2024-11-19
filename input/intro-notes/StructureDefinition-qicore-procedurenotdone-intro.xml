@@ -9,10 +9,10 @@
 
 <b>QI Elements:</b>
 <ul>
-<li>Procedure.extension(recorded): (QI) When the procedure was first captured in the subject's record</li>
+<li>extension(recorded): (QI) When the procedure was first captured in the subject's record</li>
 <li>basedOn: (QI) A request for this procedure</li>
 <li>statusReason: (QI) Reason for the current status</li>
-<li>Procedure.code.extension(notDoneValueSet): (QI) What was not performed</li>
+<li>code.extension(notDoneValueSet): (QI) What was not performed</li>
 <li>performed[x]: (QI) When the procedure was performed</li>
 <li>reasonCode: (QI) Coded reason procedure performed</li>
 <li>reasonReference: (QI) The justification that the procedure was performed</li>
