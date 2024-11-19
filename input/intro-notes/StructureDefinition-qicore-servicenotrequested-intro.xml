@@ -11,7 +11,7 @@
 
 <b>QI Elements:</b>
 <ul>
-<li>notDoneValueSet: (QI) What was not requested</li>
+<li>ServiceRequest.code.extension(notDoneValueSet): (QI) What was not requested</li>
 <li>occurrence[x]: (QI) When service should occur</li>
 <li>reasonCode: (QI) Explanation/Justification for procedure or service</li>
 <li>reasonReference: (QI) Explanation/Justification for service or service</li>

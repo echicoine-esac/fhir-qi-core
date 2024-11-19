@@ -71,7 +71,7 @@
 * status: draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
 * intent: proposal \| plan \| order \| option
 * category: (QI) Type of plan
-* AssessPlan: (QI) Type of plan
+* CarePlan.category(AssessPlan): (QI) Type of plan
 * subject: (QI) Who the care plan is for.
 
 **Primary code path:** category
@@ -158,12 +158,12 @@
 
 ### [QICore Communication Not Done](StructureDefinition-qicore-communicationnotdone.html) ###
 **QI Elements:**
-* event-recorded: (QI) Captures the recorded date of the communication
+* Communication.extension(event-recorded): (QI) Captures the recorded date of the communication
 * status: (QI) preparation \| in-progress \| not-done \| on-hold \| stopped \| completed \| entered-in-error \| unknown
 * statusReason: (QI) Reason for current status
 * subject: (QI) Focus of message
 * topic: (QI) Description of the purpose/content
-* notDoneValueSet: (QI) Url of a value set of activities not requested or performed
+* Communication.topic.extension(notDoneValueSet): (QI) Url of a value set of activities not requested or performed
 
 **Primary code path:** reasonCode
 <br>
@@ -218,7 +218,7 @@
 ### [QICore Condition Encounter Diagnosis](StructureDefinition-qicore-condition-encounter-diagnosis.html) ###
 **Must Have:**
 * category: category codes
-* us-core: encounter-diagnosis
+* Condition.category(us-core): encounter-diagnosis
 * code: Identification of the condition, problem or diagnosis
 * subject: (QI) Who has the condition?
 
@@ -241,7 +241,7 @@
 ### [QICore Condition Problems Health Concerns](StructureDefinition-qicore-condition-problems-health-concerns.html) ###
 **Must Have:**
 * category: category codes
-* us-core: problem-list-item \| health-concern
+* Condition.category(us-core): problem-list-item \| health-concern
 * code: (QI) Identification of the condition, problem or diagnosis
 * subject: (QI) Who has the condition?
 
@@ -293,12 +293,12 @@
 
 ### [QICore Device Not Requested](StructureDefinition-qicore-devicenotrequested.html) ###
 **QI Elements:**
-* doNotPerform: (QI) Extension
+* DeviceRequest.modifierExtension(doNotPerform): (QI) Extension
 * modifierExtension.value[x]: (QI) Value of extension
 * status: (QI) draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
 * intent: (QI) proposal \| plan \| directive \| order \| original-order \| reflex-order \| filler-order \| instance-order \| option
 * code[x]: (QI) Device requested
-* doNotPerformValueSet: (QI) What was not done
+* DeviceRequest.code[x].extension(doNotPerformValueSet): (QI) What was not done
 * subject: (QI) Focus of request
 * authoredOn: (QI) When recorded
 * reasonCode: (QI) Explanation/Justification for procedure or service
@@ -329,7 +329,7 @@
 
 ### [QICore DeviceRequest](StructureDefinition-qicore-devicerequest.html) ###
 **QI Elements:**
-* doNotPerform: (QI) Extension
+* DeviceRequest.modifierExtension(doNotPerform): (QI) Extension
 * modifierExtension.value[x]: (QI) Value of extension
 * identifier: (QI) External Request identifier
 * status: (QI) draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown
@@ -371,7 +371,7 @@
 **Must Have:**
 * status: (QI)registered \| partial \| preliminary \| final +
 * category: (QI) Service category
-* LaboratorySlice: (QI) Service category
+* DiagnosticReport.category(LaboratorySlice): (QI) Service category
 * code: (QI) US Core Laboratory Report Order Code
 * subject: (QI) The subject of the report - usually, but not always, the patient
 
@@ -539,7 +539,7 @@
 
 
 **QI Elements:**
-* notDoneValueSet: (QI) What wasn't administered
+* Immunization.vaccineCode.extension(notDoneValueSet): (QI) What wasn't administered
 * recorded: (QI) Documented date Immunization did not occur.
 
 **Primary code path:** vaccineCode
@@ -616,7 +616,7 @@
 **Must Have:**
 * status: (QI) registered \| prliminary \| final \| amended \| corrected \| entered-in-error \| unknown
 * category: (QI) Classification of type of observation
-* us-core: (QI) Classification of type of observation
+* Observation.category(us-core): (QI) Classification of type of observation
 * code: (QI) Laboratory Test Name
 * subject: (QI) Who and/or what the observation is about
 
@@ -702,11 +702,11 @@
 ### [QICore MedicationAdministration Not Done](StructureDefinition-qicore-medicationadministrationnotdone.html) ###
 **QI Elements:**
 * implicitRules: (QI) A set of rules under which this content was created
-* recorded: (QI) Recorded
+* MedicationAdministration.extension(recorded): (QI) Recorded
 * status: (QI) in-progress \| not-done \| on-hold \| completed \| entered-in-error \| stopped \| unknown
 * statusReason: (QI) Reason administration not performed
 * medication[x]: (QI) What was administered
-* notDoneValueSet: (QI) Url of a value set of activities not requested or performed
+* MedicationAdministration.medication[x].extension(notDoneValueSet): (QI) Url of a value set of activities not requested or performed
 * subject: (QI) Who received medication
 * context: (QI) Encounter or Episode of Care administered as part of
 * effective[x]: (QI) Start and end time of administration
@@ -724,7 +724,7 @@
 
 ### [QICore MedicationAdministration](StructureDefinition-qicore-medicationadministration.html) ###
 **QI Elements:**
-* recorded: (QI) Recorded
+* MedicationAdministration.extension(recorded): (QI) Recorded
 * status: (QI) in-progress \| on-hold \| completed \| entered-in-error \| stopped \| unknown
 * medication[x]: (QI) What was administered
 * subject: (QI) Who received medication
@@ -754,9 +754,9 @@
 
 
 **QI Elements:**
-* recorded: (QI) Extension
+* MedicationDispense.extension(recorded): (QI) Extension
 * statusReason[x]: (QI) Why a dispense was not performed
-* notDoneValueSet: (QI) Url of a value set of activities not requested or performed
+* MedicationDispense.medication[x].extension(notDoneValueSet): (QI) Url of a value set of activities not requested or performed
 * dosageInstruction.text: (QI) Free text dosage instructions e.g. SIG
 * dosageInstruction.timing: (QI) When medication should be administered
 * dosageInstruction.doseAndRate: (QI) Amount of medication administered
@@ -782,7 +782,7 @@
 
 
 **QI Elements:**
-* recorded: (QI) Extension
+* MedicationDispense.extension(recorded): (QI) Extension
 * authorizingPrescription: (QI) Medication order that authorizes the dispense
 * type: (QI) Trial fill, partial fill, emergency fill, etc.
 * quantity: (QI) Amount dispensed
@@ -883,7 +883,7 @@
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * performer: (QI) Who is responsible for the observation
 * value[x]: (QI) Actual result
-* valueCodeableConcept: (QI) actual \| potential
+* Observation.value[x](valueCodeableConcept): (QI) actual \| potential
 * interpretation: (QI) High, low, normal, etc.
 * derivedFrom: (QI) QI Core Profiles or other resource the observation is made from
 
@@ -908,16 +908,16 @@
 
 ### [QICore Observation Cancelled](StructureDefinition-qicore-observationcancelled.html) ###
 **QI Elements:**
-* event-statusReason: (QI) Event Status Reason
+* Observation.extension(event-statusReason): (QI) Event Status Reason
 * status: (QI) registered \| preliminary \| final \| amended +
 * category: (QI) Classification of type of observation
 * code: (QI) Type of observation (code / type)
-* notDoneValueSet: (QI) What was not done
+* Observation.code.extension(notDoneValueSet): (QI) What was not done
 * subject: (QI) Who and/or what the observation is about
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * issued: (QI) Date/Time this version was made available
 * value[x]: (QI) Actual result
-* valueCodeableConcept: (QI) Actual result
+* Observation.value[x](valueCodeableConcept): (QI) Actual result
 * interpretation: (QI) High, low, normal, etc.
 
 **Primary code path:** code
@@ -939,7 +939,7 @@
 
 
 **QI Elements:**
-* us-core: (QI) Classification of type of observation
+* Observation.category(us-core): (QI) Classification of type of observation
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * value[x]: (QI) Result Value
 * dataAbsentReason: (QI) Why the result is missing
@@ -958,13 +958,13 @@
 **Must Have:**
 * status: (QI) registered \| prliminary \| final \| amended \| corrected \| entered-in-error \| unknown
 * category: (QI) Classification of type of observation
-* survey: (QI) Classification of type of observation
+* Observation.category(survey): (QI) Classification of type of observation
 * code: (QI) Type of observation (code / type)
 * subject: (QI) Who and/or what the observation is about
 
 
 **QI Elements:**
-* screening-assessment: (QI) Classification of type of observation
+* Observation.category(screening-assessment): (QI) Classification of type of observation
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * performer: (QI) Who is responsible for the observation
 * value[x]: (QI) Actual result
@@ -990,10 +990,10 @@
 
 
 **QI Elements:**
-* ccn: (QI) CMS Certification Number
+* Organization.identifier(ccn): (QI) CMS Certification Number
 * identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
 * identifier.value: (QI) The value that is unique
-* ein: (QI) Employer Identification Number
+* Organization.identifier(ein): (QI) Employer Identification Number
 * identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
 * identifier.value: (QI) The value that is unique
 
@@ -1020,11 +1020,11 @@
 
 
 **QI Elements:**
-* race: (QI) US Core Race Extension
-* ethnicity: (QI) US Core ethnicity Extension
-* tribalAffiliation: (QI) Tribal Affiliation Extension
-* sex: (QI) Sex Extension
-* genderIdentity: (QI) The individual's gender identity
+* Patient.extension(race): (QI) US Core Race Extension
+* Patient.extension(ethnicity): (QI) US Core ethnicity Extension
+* Patient.extension(tribalAffiliation): (QI) Tribal Affiliation Extension
+* Patient.extension(sex): (QI) Sex Extension
+* Patient.extension(genderIdentity): (QI) The individual's gender identity
 * name.use: (QI) usual \| official \| temp \| nickname \| anonymous \| old \| maiden
 * name.suffix: (QI) Parts that come after the name
 * name.period: (QI) Time period when name was/is in use
@@ -1051,8 +1051,8 @@
 
 
 **QI Elements:**
-* NPI: (QI) An identifier for the person as this agent
-* ein: (QI) There is not a general Tax Identifier Numer (TIN) OID. There is an SSN, a PTIN, and an ITIN, but no TIN generally. So the only slice specified here is EIN, if consumers determine a need for an SSN, submit a comment to that effect.
+* Practitioner.identifier(NPI): (QI) An identifier for the person as this agent
+* Practitioner.identifier(ein): (QI) There is not a general Tax Identifier Numer (TIN) OID. There is an SSN, a PTIN, and an ITIN, but no TIN generally. So the only slice specified here is EIN, if consumers determine a need for an SSN, submit a comment to that effect.
 * identifier.use: (QI) usual \| official \| temp \| secondary \| old (If known)
 * identifier.value: (QI) The value that is unique
 
@@ -1100,10 +1100,10 @@
 
 
 **QI Elements:**
-* recorded: (QI) When the procedure was first captured in the subject's record
+* Procedure.extension(recorded): (QI) When the procedure was first captured in the subject's record
 * basedOn: (QI) A request for this procedure
 * statusReason: (QI) Reason for the current status
-* notDoneValueSet: (QI) What was not performed
+* Procedure.code.extension(notDoneValueSet): (QI) What was not performed
 * performed[x]: (QI) When the procedure was performed
 * reasonCode: (QI) Coded reason procedure performed
 * reasonReference: (QI) The justification that the procedure was performed
@@ -1127,7 +1127,7 @@
 
 **QI Elements:**
 * implicitRules: (QI) A set of rules under which this content was created
-* recorded: (QI) When the procedure was first captured in the subject's record
+* Procedure.extension(recorded): (QI) When the procedure was first captured in the subject's record
 * basedOn: (QI) A request for this procedure
 * performed[x]: (QI) When the procedure was performed
 * reasonCode: (QI) Coded reason procedure performed
@@ -1193,7 +1193,7 @@
 
 
 **QI Elements:**
-* notDoneValueSet: (QI) What was not requested
+* ServiceRequest.code.extension(notDoneValueSet): (QI) What was not requested
 * occurrence[x]: (QI) When service should occur
 * reasonCode: (QI) Explanation/Justification for procedure or service
 * reasonReference: (QI) Explanation/Justification for service or service
@@ -1246,7 +1246,7 @@
 * effective[x]: (QI) Clinically relevant time/time-period for observation
 * performer: (QI) Who is responsible for the observation
 * value[x]: (QI) Actual result
-* valueCodeableConcept: (QI) actual \| potential
+* Observation.value[x](valueCodeableConcept): (QI) actual \| potential
 * interpretation: (QI) High, low, normal, etc.
 * derivedFrom: (QI) US Core Profiles or other resource the observation is made from
 
