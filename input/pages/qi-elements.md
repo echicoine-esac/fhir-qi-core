@@ -1,4 +1,6 @@
-### [QICore AdverseEvent](StructureDefinition-qicore-adverseevent.html) ###
+"Must Have", "QI Elements" and "primary code path" are defined in the [QI-Core Must Support section](index.html#mustsupport-flag).
+
+### [QICore AdverseEvent](StructureDefinition-qicore-adverseevent.html) ###
 **QI Elements:**
 * actuality: (QI) actual \| potential
 * category: (QI) product-problem \| product-quality \| product-use-error \| wrong-dose \| incorrect-prescribing-information \| wrong-technique \| wrong-route-of-administration \| wrong-rate \| wrong-duration \| wrong-time \| expired-drug \| medical-device-use-error \| problem-different-manufacturer \| unsafe-physical-environment
